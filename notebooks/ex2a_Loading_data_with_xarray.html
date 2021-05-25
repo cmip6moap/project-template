@@ -14558,10 +14558,12 @@ variables:
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">dataset</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">paths_to_load</span> <span class="o">=</span> <span class="p">[</span>
     <span class="n">glob</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;/badc/cmip6/data/CMIP6/CMIP/MOHC/HadGEM3-GC31-LL/piControl/r1i1p1f1/Amon/</span><span class="si">{</span><span class="n">variable</span><span class="si">}</span><span class="s1">/gn/latest/*.nc&#39;</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">variable</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;tas&#39;</span><span class="p">,</span> <span class="s1">&#39;pr&#39;</span><span class="p">]</span>
-<span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">dataset</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_mfdataset</span><span class="p">(</span><span class="n">paths</span><span class="o">=</span><span class="n">chain</span><span class="p">(</span><span class="o">*</span><span class="n">paths_to_load</span><span class="p">))</span>
 </pre></div>
 
      </div>

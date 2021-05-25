@@ -14680,17 +14680,17 @@ find /badc/cmip6/data/<span class="sb">`</span><span class="nb">echo</span> <spa
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Data-that-is-not-available-on-JASMIN">Data that is not available on JASMIN<a class="anchor-link" href="#Data-that-is-not-available-on-JASMIN">&#182;</a></h2><p>If you can't find the dataset that you need on the CEDA Archive, then you can try <a href="https://esgf-index1.ceda.ac.uk/projects/cmip6-ceda/">searching the Earth System Grid Federation (ESGF) site</a> which contains the full CMIP6 Archive.</p>
-<p>For datasets with a handful of small data files you can download them onto JASMIN using <code>wget</code>, however for larger datasets, you should first contact the <a href="https://www.jasmin.ac.uk/help/contact/">CEDA helpdesk</a>.</p>
+<p>For datasets with a handful of small data files you can download them onto JASMIN using <code>curl</code>, however for larger datasets, you should first contact the <a href="https://www.jasmin.ac.uk/help/contact/">CEDA helpdesk</a>.</p>
 <p>For example, from a notebook or on the command line, you can download a NetCDF file by using the HTTP download link on the ESGF website:</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>wget http://crd-esgf-drc.ec.gc.ca/thredds/fileServer/esgC_dataroot/AR6/CMIP6/LUMIP/CCCma/CanESM5/deforest-globe/r1i1p2f1/Ofx/areacello/gn/v20190429/areacello_Ofx_CanESM5_deforest-globe_r1i1p2f1_gn.nc
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>curl -O http://crd-esgf-drc.ec.gc.ca/thredds/fileServer/esgC_dataroot/AR6/CMIP6/LUMIP/CCCma/CanESM5/deforest-globe/r1i1p2f1/Ofx/areacello/gn/v20190429/areacello_Ofx_CanESM5_deforest-globe_r1i1p2f1_gn.nc
 </pre></div>
 
      </div>
@@ -14710,17 +14710,9 @@ find /badc/cmip6/data/<span class="sb">`</span><span class="nb">echo</span> <spa
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>--2021-04-20 14:45:32--  http://crd-esgf-drc.ec.gc.ca/thredds/fileServer/esgC_dataroot/AR6/CMIP6/LUMIP/CCCma/CanESM5/deforest-globe/r1i1p2f1/Ofx/areacello/gn/v20190429/areacello_Ofx_CanESM5_deforest-globe_r1i1p2f1_gn.nc
-Resolving crd-esgf-drc.ec.gc.ca (crd-esgf-drc.ec.gc.ca)... 205.189.10.92
-Connecting to crd-esgf-drc.ec.gc.ca (crd-esgf-drc.ec.gc.ca)|205.189.10.92|:80... connected.
-HTTP request sent, awaiting response... 200 200
-Length: 1522440 (1.5M) [application/x-netcdf]
-Saving to: ‘areacello_Ofx_CanESM5_deforest-globe_r1i1p2f1_gn.nc’
-
-areacello_Ofx_CanES 100%[===================&gt;]   1.45M  1.11MB/s    in 1.3s    
-
-2021-04-20 14:45:45 (1.11 MB/s) - ‘areacello_Ofx_CanESM5_deforest-globe_r1i1p2f1_gn.nc’ saved [1522440/1522440]
-
+<pre>  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100 1486k  100 1486k    0     0   210k      0  0:00:07  0:00:07 --:--:--  418k
 </pre>
 </div>
 </div>

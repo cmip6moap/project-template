@@ -14284,30 +14284,9 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Step-0:-Naming-your-environment">Step 0: Naming your environment<a class="anchor-link" href="#Step-0:-Naming-your-environment">&#182;</a></h2><p>We're going to assume that you're going to name the environment <code>cmip6</code> and that your environment definition is in <code>environment.yml</code>.</p>
-<p>If you are working with more than one environment then you'll need to give each a distinct name – you can change these below.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">environment_name</span> <span class="o">=</span> <span class="s2">&quot;cmip6&quot;</span>
-<span class="n">environment_file</span> <span class="o">=</span> <span class="s2">&quot;../environment.yml&quot;</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Step-1:-Create-a-new-environment-with-packages-from-environment.yml">Step 1: Create a new environment with packages from <code>environment.yml</code><a class="anchor-link" href="#Step-1:-Create-a-new-environment-with-packages-from-environment.yml">&#182;</a></h2><p>First we create a new conda environment, installing all the packages defined in the environment file.</p>
-<p>We're going to run commands in the shell using the special jupyter <code>!</code> syntax. This is the equivalent of running these commands directly on the command line. If you are working at the command line rather than in JupyterLab, then just type these values directly into the command you are running, replacing the <code>{environment_name}</code> etc. placeholders that we've included below with their actual values.</p>
+<p>We're going to assume that you're going to name the environment <code>cmip6</code> and that your environment definition is in <code>environment.yml</code> (if you are working with more than one environment then you'll need to give each a distinct name and definition).</p>
+<p>We're going to run commands in the shell using the special jupyter <code>!</code> syntax. This is the equivalent of running these commands directly on the command line (if you <em>are</em> working at the command line rather than in JupyterLab, then just type these commands directly, without the <code>!</code>).</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14317,7 +14296,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a new conda environment, installing all the packages defined in the environment file</span>
-<span class="o">!</span>conda env create --name <span class="o">{</span>environment_name<span class="o">}</span> --file <span class="o">{</span>environment_file<span class="o">}</span>
+<span class="o">!</span>conda env create --name cmip6 --file ../environment.yml
 </pre></div>
 
      </div>
@@ -14343,7 +14322,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>conda env <span class="nb">export</span> --name <span class="o">{</span>environment_name<span class="o">}</span> --file <span class="o">{</span>environment_file<span class="o">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>conda env <span class="nb">export</span> --name cmip6 --file ../environment.yml
 </pre></div>
 
      </div>
@@ -14376,13 +14355,13 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Install the environment as an &quot;ipykernel&quot; so that the Notebook Service will find it</span>
-<span class="o">!</span>conda run -n <span class="o">{</span>environment_name<span class="o">}</span> python -m ipykernel install --user --name <span class="o">{</span>environment_name<span class="o">}</span>
+<span class="o">!</span>conda run -n cmip6 python -m ipykernel install --user --name cmip6
 
 <span class="c1"># If the above command doesn&#39;t work on your system (at time of writing, `conda run` is experimental),</span>
 <span class="c1"># then you can try:</span>
-<span class="c1">#   !~/.conda/envs/{environment_name}/bin/python -m ipykernel install --user --name {environment_name}</span>
+<span class="c1">#   !~/.conda/envs/cmip6/bin/python -m ipykernel install --user --name cmip6</span>
 <span class="c1"># or:</span>
-<span class="c1">#   !~/.miniconda3/envs/{environment_name}/bin/python -m ipykernel install --user --name {environment_name}</span>
+<span class="c1">#   !~/.miniconda3/envs/cmip6/bin/python -m ipykernel install --user --name cmip6</span>
 <span class="c1"># (depending on where your conda environment was created)</span>
 </pre></div>
 
@@ -14426,7 +14405,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Install the latest version of a library into our environment</span>
-<span class="o">!</span>conda install -y --name <span class="o">{</span>environment_name<span class="o">}</span> requests
+<span class="o">!</span>conda install -y --name cmip6 requests
 
 <span class="c1"># You need to make sure you install the package into the correct environment, so to be on</span>
 <span class="c1"># the say side we specify that explcitily. As we&#39;re working from within a notebook, we</span>
@@ -14452,14 +14431,14 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># To use conda-forge:</span>
-<span class="c1">#   !conda install -y --name {environment_name} --channel conda-forge requests</span>
+<span class="c1">#   !conda install -y --name cmip6 --channel conda-forge requests</span>
 <span class="c1">#</span>
 <span class="c1"># or to use pip, one of the following:</span>
-<span class="c1">#   !conda run --name {environment_name} pip install requests</span>
+<span class="c1">#   !conda run --name cmip6 pip install requests</span>
 <span class="c1"># or:</span>
-<span class="c1">#   !~/.conda/envs/{environment_name}/bin/pip install requests</span>
+<span class="c1">#   !~/.conda/envs/cmip6/bin/pip install requests</span>
 <span class="c1"># or:</span>
-<span class="c1">#   !~/.miniconda3/envs/{environment_name}/bin/pip install requests</span>
+<span class="c1">#   !~/.miniconda3/envs/cmip6/bin/pip install requests</span>
 </pre></div>
 
      </div>
@@ -14479,7 +14458,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>conda env <span class="nb">export</span> --name <span class="o">{</span>environment_name<span class="o">}</span> --file <span class="o">{</span>environment_file<span class="o">}</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>conda env <span class="nb">export</span> --name cmip6 --file ../environment.yml
 </pre></div>
 
      </div>
@@ -14513,7 +14492,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Update our conda environment, installing packages added to the environment file</span>
-<span class="o">!</span>conda env update --name <span class="o">{</span>environment_name<span class="o">}</span> --file <span class="o">{</span>environment_file<span class="o">}</span>
+<span class="o">!</span>conda env update --name cmip6 --file ../environment.yml
 </pre></div>
 
      </div>
@@ -14534,7 +14513,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Recreate the conda environment from scratch</span>
-<span class="c1">#   !conda env create --name {environment_name} --file {environment_file} --force</span>
+<span class="c1">#   !conda env create --name cmip6 --file ../environment.yml --force</span>
 
 <span class="c1"># NOTE: only run this if you need to – it will remove all packages and reinstall</span>
 <span class="c1"># as per your environment.yml</span>
@@ -14561,7 +14540,7 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h2 id="Acknowledgements">Acknowledgements<a class="anchor-link" href="#Acknowledgements">&#182;</a></h2><p>This notebook is based on the <a href="https://github.com/cedadev/ceda-notebooks/blob/master/notebooks/docs/add_conda_envs.ipynb">conda envs tutorial from CEDA</a>.</p>
 <p>By: <a href="https://github.com/jatonline/">James Thomas</a> and <a href="https://github.com/wseviour/">William Seviour</a></p>
-<p>Last updated: 1st April 2021</p>
+<p>Last updated: 25th May 2021</p>
 
 </div>
 </div>
