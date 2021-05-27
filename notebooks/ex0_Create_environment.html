@@ -14313,7 +14313,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="Step-2:-Freeze-the-versions-of-the-packages-that-you-have-just-installed">Step 2: <em>Freeze</em> the versions of the packages that you have just installed<a class="anchor-link" href="#Step-2:-Freeze-the-versions-of-the-packages-that-you-have-just-installed">&#182;</a></h2><p>By <em>freezing</em> the exact versions of all the packages that we have installed to our environment file, we ensure that we have a record of all the software needed to recreate our results. We can reinstall an (almost) identical copy of the environment on another machine, or at a later date.</p>
+<h2 id="Step-2:-Freeze-the-versions-of-the-packages-that-you-have-just-installed">Step 2: <em>Freeze</em> the versions of the packages that you have just installed<a class="anchor-link" href="#Step-2:-Freeze-the-versions-of-the-packages-that-you-have-just-installed">&#182;</a></h2><p>By <em>freezing</em> the exact versions of all the packages that we have installed to a new <code>environment_fronzen.yml</code> file, we ensure that we have a record of all the software needed to recreate our results. We can reinstall an (almost) identical copy of the environment on another machine, or at a later date.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14322,7 +14322,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>conda env <span class="nb">export</span> --name cmip6 --file ../environment.yml
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>conda env <span class="nb">export</span> --name cmip6 --file ../environment_frozen.yml
 </pre></div>
 
      </div>
@@ -14458,7 +14458,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>conda env <span class="nb">export</span> --name cmip6 --file ../environment.yml
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>conda env <span class="nb">export</span> --name cmip6 --file ../environment_frozen.yml
 </pre></div>
 
      </div>
@@ -14469,7 +14469,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Method-2:-Modify-environment-file">Method 2: Modify environment file<a class="anchor-link" href="#Method-2:-Modify-environment-file">&#182;</a></h3><p>The other way to add more packages to the environment is to add them to dependencies section of your <code>environment.yml</code> file:</p>
+<h3 id="Method-2:-Modify-environment-file">Method 2: Modify environment file<a class="anchor-link" href="#Method-2:-Modify-environment-file">&#182;</a></h3><p>The other way to add more packages to the environment is to add them to dependencies section of your <code>environment_frozen.yml</code> file:</p>
 
 <pre><code>dependencies:
  - python=3.9.1
@@ -14492,7 +14492,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Update our conda environment, installing packages added to the environment file</span>
-<span class="o">!</span>conda env update --name cmip6 --file ../environment.yml
+<span class="o">!</span>conda env update --name cmip6 --file ../environment_frozen.yml
 </pre></div>
 
      </div>
@@ -14513,10 +14513,10 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Recreate the conda environment from scratch</span>
-<span class="c1">#   !conda env create --name cmip6 --file ../environment.yml --force</span>
+<span class="c1">#   !conda env create --name cmip6 --file ../environment_frozen.yml --force</span>
 
 <span class="c1"># NOTE: only run this if you need to – it will remove all packages and reinstall</span>
-<span class="c1"># as per your environment.yml</span>
+<span class="c1"># as per your environment_frozen.yml</span>
 </pre></div>
 
      </div>
