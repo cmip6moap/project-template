@@ -39,6 +39,7 @@ dependencies:
  - ipykernel
 # - ipyleaflet
 # - ipywidgets
+ - iris
 # - jupyter-panel-proxy
 # - jupyter-resource-usage
 # - lz4
@@ -75,6 +76,7 @@ dependencies:
  - scipy
 # - sparse
 # - tiledb-py
+ - tqdm
  - xarray
 # - xarrayutils
  - xarray_leaflet
