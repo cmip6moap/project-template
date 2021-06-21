@@ -21,6 +21,7 @@ dependencies:
 # - erddapy
 # - esmpy
 # - fastjmd95
+ - ffmpeg
 # - fsspec
 # - gcsfs
 # - geocube
@@ -31,14 +32,15 @@ dependencies:
  - h5py
 # - holoviews
 # - hvplot
-# - intake
+ - intake
 # - intake-esm
 # - intake-geopandas
 # - intake-stac
 # - intake-xarray
- - ipykernel
 # - ipyleaflet
+ - ipykernel
 # - ipywidgets
+ - iris
 # - jupyter-panel-proxy
 # - jupyter-resource-usage
 # - lz4
@@ -64,6 +66,7 @@ dependencies:
 # - python-graphviz
 # - rasterio
 # - rechunker
+ - regionmask
 # - rio-cogeo
 # - rioxarray
 # - s3fs>0.5
@@ -73,13 +76,16 @@ dependencies:
 # - scikit-image
 # - scikit-learn
  - scipy
+ - seawater
 # - sparse
 # - tiledb-py
+ - tqdm
  - xarray
 # - xarrayutils
  - xarray_leaflet
  - xarray-spatial
 # - xcape
+ - xclim
 # - xcube
 # - xesmf
  - xgcm
@@ -89,3 +95,8 @@ dependencies:
 # - xpublish
 # - xrft
 # - zarr
+ - pip:
+   - dash
+   - palettable
+   - plotly
+   - seaborn
